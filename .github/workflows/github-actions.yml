@@ -16,9 +16,9 @@ jobs:
       - run: npm run build
       - name: Commit report
         run: |
-          rm -rf ./build ./package-lock.json
+          git rm -rf ./build ./package-lock.json
           git config --global user.name 'dickeylth'
           git config --global user.email 'dickeylth@users.noreply.github.com'
           git add ./prebuilds
-          git diff --quiet || git commit -am "chore:bot-build for ${{ matrix.os}}" && git push
+          git diff --quiet ./prebuilds || git commit -am "chore:bot-build for ${{ matrix.os}}" && git push
       - run: echo "🍎 This job's status is ${{ job.status }}"
