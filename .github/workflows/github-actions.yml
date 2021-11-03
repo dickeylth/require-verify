@@ -1,0 +1,9 @@
+name: Github Actions
+on: [push]
+jobs:
+  Build-NAPI-Binary-Action:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install
+      - run: npm run build
+      - run echo "🍎 This job's status is ${{ jbo.status }}"
