@@ -4,6 +4,7 @@
   "description": "Verify require context for module api call security",
   "main": "index.js",
   "scripts": {
+    "install": "echo",
     "build": "prebuildify --napi --strip",
     "build:dev": "node-gyp -j 16 build --debug",
     "rebuild:dev": "node-gyp -j 16 rebuild --debug",
