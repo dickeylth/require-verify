@@ -1,0 +1,35 @@
+{
+  "name": "require-verify",
+  "version": "0.1.0",
+  "description": "Verify require context for module api call security",
+  "main": "index.js",
+  "scripts": {
+    "build": "prebuildify --napi --strip",
+    "build:dev": "node-gyp -j 16 build --debug",
+    "rebuild:dev": "node-gyp -j 16 rebuild --debug",
+    "clean": "node-gyp clean",
+    "test": "node ./test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dickeylth/require-verify.git"
+  },
+  "devDependencies": {
+    "node-gyp": "^8.3.0",
+    "prebuildify": "^4.2.1"
+  },
+  "dependencies": {
+    "node-gyp-build": "^4.3.0"
+  },
+  "keywords": [
+    "require",
+    "verify",
+    "addon"
+  ],
+  "author": "dickeylth <dickeylth@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dickeylth/require-verify/issues"
+  },
+  "homepage": "https://github.com/dickeylth/require-verify#readme"
+}
