@@ -26,7 +26,7 @@ napi_value encrypt(napi_env env, napi_callback_info info) {
   napi_get_cb_info(env, info, &argc, argv, &thisArg, NULL);
 
   char* user_name = parseStringArg(env, argv[0]);
-  char prefix[] = "Hello ";
+  char prefix[] = "Hello Github ";
   strcat(prefix, user_name);
 
   napi_value return_value;
