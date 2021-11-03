@@ -4,6 +4,7 @@ jobs:
   Build-NAPI-Binary-Action:
     runs-on: ${{ matrix.os }}
     strategy:
+      max-parallel: 1
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
@@ -15,9 +16,9 @@ jobs:
       - run: npm run build
       - name: Commit report
         run: |
+          rm -rf ./build ./package-lock.json
           git config --global user.name 'dickeylth'
           git config --global user.email 'dickeylth@users.noreply.github.com'
           git add ./prebuilds
-          git commit -am "chore:bot-build"
-          git push
+          if git status --porcelain | grep .; then git commit -am "chore:bot-build for ${{ matrix.os}}" && git push else echo "Repo is clean" fi
       - run: echo "🍎 This job's status is ${{ job.status }}"
