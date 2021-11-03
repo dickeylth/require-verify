@@ -10,4 +10,14 @@ jobs:
           node-version: '14'
       - run: npm install
       - run: npm run build
+      - run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
+      - name: Commit report
+        run: |
+          git config --global user.name 'dickeylth'
+          git config --global user.email 'dickeylth@users.noreply.github.com'
+          git commit -am "chore:bot-build"
+          git push
       - run: echo "🍎 This job's status is ${{ job.status }}"
