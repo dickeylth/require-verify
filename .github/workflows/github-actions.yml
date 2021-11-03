@@ -2,7 +2,10 @@ name: Github Actions
 on: [push]
 jobs:
   Build-NAPI-Binary-Action:
-    runs-on: ubuntu-latest
+    runs-on: $${ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
