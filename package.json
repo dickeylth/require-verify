@@ -1,6 +1,6 @@
 {
   "name": "require-verify",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Verify require context for module api call security",
   "main": "index.js",
   "scripts": {
