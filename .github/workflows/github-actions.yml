@@ -17,7 +17,7 @@ jobs:
           ENC_PUBLIC_KEY: ${{ secrets.ENC_PUBLIC_KEY }}
         run: |
           npm install
-          ENC_PUBLIC_KEY=${{}} npm run build
+          npm run build
       - name: Commit report
         run: |
           git status
